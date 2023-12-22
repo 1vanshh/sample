@@ -37,8 +37,8 @@ html, body {
   position: absolute;
   top: 20px;
   left: 20px;
-  width: 100px; /* Измените размер логотипа по вашему усмотрению */
-  height: auto; /* Позволяет сохранить соотношение сторон */
+  max-width: 100px;
+  height: auto;
 }
 
 .second__block{

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Поскрякова Мария</title>
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/boxicons@latest/css/boxicons.min.css">
+  <link rel="stylesheet" href="css/style.css">
+   
+</head>
+<body>
+    <div class="main">
+        <div class="first__block">
+            <img src="img/logo-1IlSUY7Hn-transformed.png" alt="logo" class="logo">
+            <img src="img/photo.png" alt="person" class="person">
+            <p class="person__name">Поскрякова Мария Владимировна</p>
+            <p class="person__job">Руководитель рекламной службы объединенной компании Сота/Трансферт</p>
+            <a class="hero__link" href="https://vk.com/id2595400" target="_blank">
+                <i class='bx bxl-vk'></i>
+            </a>
+            <a class="hero__link" href="https://t.me/mposkryakova" target="_blank">
+                <i class='bx bxl-telegram'></i>
+            </a>
+            <a class="hero__link" href="https://wa.me/+79204059059" target="_blank">
+                <i class='bx bxl-whatsapp'></i>
+            </a>
+            <a class="hero__link" href="mailto:mvpsota@yandex.ru">
+                <i class='bx bxs-envelope'></i>
+            </a>
+            <a class="hero__link" href="tel: +79204059059">
+                <i class='bx bx-phone'></i>
+            </a>
+            <button id="contactButton" class="contactButton">Добавить в контакты</button>
+        </div>
+        <div class="second__block">
+            <p class="job__year">Стаж работы</p>
+            <p class="years">19 лет</p>
+            <p class="line"></p>
+            <p class="qualities">Профессиональные качества</p>
+            <p class="person__text">
+                Ответственная, общительная, деликатная. В любой ситуации нахожу положительные моменты. Всегда готова к диалогу. Кредо: обеспечить риэлтора входящим потоком потенциальных клиентов.
+            </p>
+        </div>
+    </div>
+    <script>
+        var contactButton = document.getElementById('contactButton');
+
+        contactButton.addEventListener('click', function() {
+            var contactName = 'Поскрякова Мария';  // Имя контакта
+            var phoneNumber = '+79204059059';
+            var companyName = 'Сота - Трансферт';  // Название компании
+
+            // Вставьте реальные данные изображения в base64 формате
+            var photoUrl  = 'data:img/vcf.jpg';
+
+            var vcfContent = 'BEGIN:VCARD\n' +
+                'VERSION:3.0\n' +
+                'FN:' + contactName + '\n' +
+                'ORG:' + companyName + '\n' +
+                'TEL:' + phoneNumber + '\n';
+
+
+            if (photoUrl) {
+                vcfContent += 'PHOTO;TYPE=JPEG;VALUE=URI:' + photoUrl  + '\n';
+            }
+
+            vcfContent += 'END:VCARD';
+
+            var blob = new Blob([vcfContent], { type: 'text/vcard;charset=utf-8' });
+
+            var downloadLink = document.createElement('a');
+            downloadLink.href = window.URL.createObjectURL(blob);
+            downloadLink.download = 'contact.vcf';
+
+            document.body.appendChild(downloadLink);
+            downloadLink.click();
+
+            document.body.removeChild(downloadLink);
+        });
+    </script>
+
+</body>
+
+</html>

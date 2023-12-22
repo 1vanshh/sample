@@ -23,7 +23,7 @@ html, body {
 .first__block{
   position: relative;
   padding-top: 30px;
-  height: 420px;
+  height: auto;
   width: 100%;
   border-radius: 0 0 20px 20px;
   margin-bottom: 30px;
@@ -43,7 +43,7 @@ html, body {
 
 .second__block{
   position: relative;
-  height: 700px;
+  height: auto;
   width: 100%;
   border-radius: 20px 20px 0 0;
   background: linear-gradient(to bottom, #013310, #056035);

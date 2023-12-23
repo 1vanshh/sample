@@ -5,6 +5,7 @@
 }
 
 html, body {
+  position: relative;
   overscroll-behavior-y: none;
   margin: 0;
   padding: 0;
@@ -35,16 +36,16 @@ html, body {
 .logo{
   background-color: rgb(255, 255, 255);
   position: absolute;
-  top: 20px;
-  left: 20px;
-  width: 10vh;
+  top: 12px;
+  left: 12px;
+  width: 7vh;
   max-width: 100px;
   height: auto;
 }
 
 .second__block{
   position: relative;
-  height: auto;
+  height: 700px;
   width: 100%;
   border-radius: 20px 20px 0 0;
   background: linear-gradient(to bottom, #013310, #056035);
@@ -52,14 +53,18 @@ html, body {
 }
 
 .contactButton {
+  font-family: 'Jost', sans-serif;
+  text-decoration: none;
   height: 45px;
   width: 220px;
   display: block;
   background-color: rgba(48, 83, 171, 0.53);
   color: #fff;
   margin: 20px auto;
-  border-radius: 20px;
+  border-radius: 15px;
   border: 2px solid #18131c;
+  text-align: center;
+  line-height: 40px;
 }
 
 .person__name{

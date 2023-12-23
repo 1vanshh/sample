@@ -33,7 +33,7 @@
             <a class="hero__link" href="tel: +79204059059">
                 <i class='bx bx-phone'></i>
             </a>
-            <button id="contactButton" class="contactButton">Добавить в контакты</button>
+            <a href="img/vcard.vcf" class="contactButton">Добавить в контакты</a>
         </div>
         <div class="second__block">
             <p class="job__year">Стаж работы</p>
@@ -45,42 +45,6 @@
             </p>
         </div>
     </div>
-    <script>
-        var contactButton = document.getElementById('contactButton');
-
-        contactButton.addEventListener('click', function() {
-            var contactName = 'Поскрякова Мария';  // Имя контакта
-            var phoneNumber = '+79204059059';
-            var companyName = 'Сота - Трансферт';  // Название компании
-
-            // Вставьте реальные данные изображения в base64 формате
-            var photoUrl  = 'data:img/vcf.jpg';
-
-            var vcfContent = 'BEGIN:VCARD\n' +
-                'VERSION:3.0\n' +
-                'FN:' + contactName + '\n' +
-                'ORG:' + companyName + '\n' +
-                'TEL:' + phoneNumber + '\n';
-
-
-            if (photoUrl) {
-                vcfContent += 'PHOTO;TYPE=JPEG;VALUE=URI:' + photoUrl  + '\n';
-            }
-
-            vcfContent += 'END:VCARD';
-
-            var blob = new Blob([vcfContent], { type: 'text/vcard;charset=utf-8' });
-
-            var downloadLink = document.createElement('a');
-            downloadLink.href = window.URL.createObjectURL(blob);
-            downloadLink.download = 'contact.vcf';
-
-            document.body.appendChild(downloadLink);
-            downloadLink.click();
-
-            document.body.removeChild(downloadLink);
-        });
-    </script>
 
 </body>
 
